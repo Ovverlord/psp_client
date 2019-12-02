@@ -3,7 +3,16 @@ package classes;
 public class User {
     private String login;
     private String password;
-    private boolean isAdmin;
+    private Integer isAdmin;
+    private Integer id;
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getId() {
+        return id;
+    }
 
     public String getLogin() {
         return login;
@@ -21,15 +30,15 @@ public class User {
         this.password = password;
     }
 
-    public boolean isAdmin() {
+    public Integer isAdmin() {
         return isAdmin;
     }
 
-    public void setAdmin(boolean admin) {
+    public void setAdmin(Integer admin) {
         isAdmin = admin;
     }
 
-    public User(String login, String password, boolean isAdmin) {
+    public User(String login, String password, Integer isAdmin) {
         this.login = login;
         this.password = password;
         this.isAdmin = isAdmin;

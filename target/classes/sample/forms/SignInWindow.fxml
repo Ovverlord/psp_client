@@ -18,8 +18,8 @@
       </Label>
       <Button fx:id="SignInButton" layoutX="244.0" layoutY="383.0" mnemonicParsing="false" onAction="#SignInButtonClicked" prefHeight="39.0" prefWidth="210.0" style="-fx-background-color: #4545e0;" text="Войти" textFill="WHITE" />
       <Button fx:id="SignUpButton" layoutX="464.0" layoutY="22.0" mnemonicParsing="false" onAction="#SignUpButtonClicked" prefHeight="25.0" prefWidth="122.0" style="-fx-background-color: #4545e0;" text="Регистрация" textFill="WHITE" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="22.0" />
-      <TextField fx:id="login_field" layoutX="240.0" layoutY="263.0" prefHeight="25.0" prefWidth="217.0" promptText="Логин" />
-      <PasswordField fx:id="password_field" layoutX="240.0" layoutY="305.0" prefHeight="25.0" prefWidth="217.0" promptText="Пароль" />
+      <TextField fx:id="loginField" layoutX="240.0" layoutY="263.0" prefHeight="25.0" prefWidth="217.0" promptText="Логин" />
+      <PasswordField fx:id="passwordField" layoutX="240.0" layoutY="305.0" prefHeight="25.0" prefWidth="217.0" promptText="Пароль" />
       <ImageView fitHeight="23.0" fitWidth="25.0" layoutX="209.0" layoutY="306.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../sapis_kursach/src/recources/Password.png" />

@@ -34,5 +34,17 @@ public class Main extends Application {
         mainStage.getIcons().add(new Image("resources/images/Cost.png"));
         mainStage.setResizable(false);
         mainStage.show();
+
+        mainStage.setOnCloseRequest(windowEvent ->
+        {
+            try
+            {
+                Connection serverSocket = Connection.getInstance().close();
+            }
+            catch (Exception ex)
+            {
+                System.out.println(ex);
+            }
+        });
     }
 }
