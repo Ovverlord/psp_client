@@ -22,12 +22,12 @@
       <PasswordField fx:id="passwordField" layoutX="240.0" layoutY="305.0" prefHeight="25.0" prefWidth="217.0" promptText="Пароль" />
       <ImageView fitHeight="23.0" fitWidth="25.0" layoutX="209.0" layoutY="306.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../sapis_kursach/src/recources/Password.png" />
+            <Image url="@../../recources/images/Password.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="208.0" layoutY="265.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../sapis_kursach/src/recources/User.png" />
+            <Image url="@../../recources/images/User.png" />
          </image>
       </ImageView>
    </children>

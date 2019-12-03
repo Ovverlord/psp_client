@@ -31,7 +31,7 @@ public class Main extends Application {
         Scene scene = new Scene(FXMLLoader.load(getClass().getResource("../sample/forms/SignInWindow.fxml")));
         mainStage.setTitle("Себестоимость");
         mainStage.setScene(scene);
-        mainStage.getIcons().add(new Image("resources/images/Cost.png"));
+        mainStage.getIcons().add(new Image("@../../recources/images/Cost.png"));
         mainStage.setResizable(false);
         mainStage.show();
 

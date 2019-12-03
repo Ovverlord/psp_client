@@ -1,5 +1,6 @@
 package controllers;
 
+import AlertWindow.AlertWindow;
 import Main.Main;
 import animation.Shake;
 import classes.User;
@@ -31,6 +32,7 @@ public class SignInWindowController {
     private PasswordField passwordField;
 
     Connection connection;
+    AlertWindow alert;
 
     @FXML
     void SignInButtonClicked(ActionEvent event)
@@ -57,15 +59,18 @@ public class SignInWindowController {
         response = connection.getResponse();
         if(response.equals("error"))
         {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Информация");
-            alert.setHeaderText(null);
-            alert.setContentText("Неверный логин или пароль");
-            alert.showAndWait();
+            alert.incorrectLoginOrPassword();
         }
         else if(response.equals("1"))
         {
-            System.out.println("admin");
+            try {
+                Stage stage = Main.getPrimaryStage();
+                Scene scene = new Scene(FXMLLoader.load(getClass().getResource("../sample/forms/AdminWindow.fxml")));
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException | NullPointerException e) {
+                e.printStackTrace();
+            }
         }
         else
         {
@@ -74,7 +79,7 @@ public class SignInWindowController {
 
 //        try {
 //            Stage stage = Main.getPrimaryStage();
-//            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("../sample/forms/UserWindow.fxml")));
+
 //            stage.setScene(scene);
 //            stage.show();
 //
@@ -87,23 +92,18 @@ public class SignInWindowController {
     @FXML
     void SignUpButtonClicked(ActionEvent event)
     {
-        connection.makeQuery("signUp//"+ JSONParser.jsonFromObject(new User(loginField.getText(),passwordField.getText(), null)));
-        //if(login_field.)
-
-
-//        try {
-//            Stage stage = Main.getPrimaryStage();
-//            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("../sample/forms/User2Window.fxml")));
-//            stage.setScene(scene);
-//            stage.show();
-//            connection.makeQuery("Hello from Client2");
-//        } catch (IOException | NullPointerException e) {
-//            e.printStackTrace();
-//            //System.out.println("ошибка подключения");
-//        }
+        try {
+            Stage stage = Main.getPrimaryStage();
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("../sample/forms/SignUpWindow.fxml")));
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException | NullPointerException e) {
+            e.printStackTrace();
+        }
     }
 
     public void initialize(){
         connection = Connection.getInstance();
+        alert = AlertWindow.getAlert();
     }
 }
