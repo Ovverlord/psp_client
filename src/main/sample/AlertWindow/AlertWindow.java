@@ -96,4 +96,13 @@ public class AlertWindow {
         alert.setContentText("Оборудование не найдено");
         alert.showAndWait();
     }
+
+    public void workerNotFound()
+    {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Информация");
+        alert.setHeaderText(null);
+        alert.setContentText("Работники не найдены");
+        alert.showAndWait();
+    }
 }

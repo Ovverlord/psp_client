@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="900.0" style="-fx-background-color: #fcfcf7;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.EquipmentWindowController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="900.0" style="-fx-background-color: #fcfcf7;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.WorkerWindowController">
    <children>
       <ToolBar layoutX="-1.0" layoutY="-1.0" prefHeight="69.0" prefWidth="838.0" style="-fx-background-color: #4545e0;">
          <items>
@@ -28,33 +28,36 @@
             <Button mnemonicParsing="false" onAction="#exitButtonClicked" style="-fx-background-color: #d9534f;" text="Выход" textAlignment="CENTER" textFill="WHITE" />
          </items>
       </ToolBar>
-      <TableView fx:id="equipmentTable" layoutY="68.0" prefHeight="308.0" prefWidth="900.0">
+      <TableView fx:id="workerTable" layoutY="68.0" prefHeight="308.0" prefWidth="900.0">
          <columns>
-            <TableColumn fx:id="nameColumn" prefWidth="180.0" text="Наименование" />
-            <TableColumn fx:id="modelColumn" prefWidth="180.0" text="Модель" />
-            <TableColumn fx:id="hoursWorkedColumn" prefWidth="180.0" text="Отработанные часы" />
-            <TableColumn fx:id="energyColumn" prefWidth="180.0" text="Затраты эл.энергии,кВТ/ч" />
-            <TableColumn fx:id="gasColumn" prefWidth="180.0" text="Затраты газа,кб.м." />
+            <TableColumn fx:id="surnameColumn" prefWidth="150.0" text="Фамилия" />
+            <TableColumn fx:id="nameColumn" prefWidth="150.0" text="Имя" />
+            <TableColumn fx:id="lastnameColumn" prefWidth="150.0" text="Отчество" />
+            <TableColumn fx:id="positionColumn" prefWidth="150.0" text="Должность" />
+            <TableColumn fx:id="wageColumn" prefWidth="150.0" text="Зарпалата" />
+            <TableColumn fx:id="hoursWorkedColumn" prefWidth="150.0" text="Отработанные часы" />
          </columns>
       </TableView>
       <Button layoutX="193.0" layoutY="501.0" mnemonicParsing="false" onAction="#deleteButtonClicked" prefHeight="25.0" prefWidth="98.0" style="-fx-background-color: #d9534f;" text="Удалить" textAlignment="CENTER" textFill="WHITE" />
       <Button layoutX="193.0" layoutY="437.0" mnemonicParsing="false" onAction="#addButtonClicked" prefHeight="25.0" prefWidth="98.0" style="-fx-background-color: #5cb85c;" text="Добавить" textAlignment="CENTER" textFill="WHITE" />
       <Button layoutX="193.0" layoutY="469.0" mnemonicParsing="false" onAction="#editButtonClicked" prefHeight="25.0" prefWidth="98.0" style="-fx-background-color: #f0ad4e;" text="Редактировать" textAlignment="CENTER" textFill="WHITE" />
-      <TextField fx:id="nameField" layoutX="24.0" layoutY="405.0" promptText="Наименование" />
-      <TextField fx:id="modelField" layoutX="24.0" layoutY="437.0" promptText="Модель" />
-      <TextField fx:id="hoursWorkedField" layoutX="24.0" layoutY="469.0" promptText="Отработанные часы" />
-      <TextField fx:id="energyField" layoutX="24.0" layoutY="501.0" promptText="Затраты эл.энергии" />
-      <TextField fx:id="gasField" layoutX="24.0" layoutY="533.0" promptText="Затраты газа" />
+      <TextField fx:id="surnameField" layoutX="24.0" layoutY="386.0" promptText="Фамилия" />
+      <TextField fx:id="nameField" layoutX="24.0" layoutY="417.0" promptText="Имя" />
+      <TextField fx:id="lastnameField" layoutX="24.0" layoutY="449.0" promptText="Отчество" />
+      <TextField fx:id="positionField" layoutX="24.0" layoutY="481.0" promptText="Должность" />
+      <TextField fx:id="wageField" layoutX="24.0" layoutY="513.0" promptText="Зарплата" />
+      <TextField fx:id="hoursWorkedField" layoutX="24.0" layoutY="546.0" promptText="Отработанные часы" />
       <Pane layoutX="322.0" layoutY="430.0" prefHeight="104.0" prefWidth="255.0" style="-fx-border-color: #292b2c;">
          <children>
             <Button layoutX="12.0" layoutY="7.0" mnemonicParsing="false" onAction="#searchButtonClicked" prefHeight="25.0" prefWidth="98.0" style="-fx-background-color: #292b2c;" text="Поиск" textFill="WHITE" />
             <Button layoutX="143.0" layoutY="7.0" mnemonicParsing="false" onAction="#resetSearchButtonClicked" prefHeight="25.0" prefWidth="98.0" style="-fx-background-color: #292b2c;" text="Сброс поиска" textFill="WHITE" />
-            <RadioButton fx:id="nameRadio" layoutX="9.0" layoutY="41.0" mnemonicParsing="false" text="Наименование">
+            <RadioButton fx:id="surnameRadio" layoutX="9.0" layoutY="41.0" mnemonicParsing="false" text="Фамилия">
                <toggleGroup>
                   <ToggleGroup fx:id="radioGroup" />
                </toggleGroup>
             </RadioButton>
-            <RadioButton fx:id="hoursWorkedRadio" layoutX="9.0" layoutY="72.0" mnemonicParsing="false" text="Отработанные часы" toggleGroup="$radioGroup" />
+            <RadioButton fx:id="positionRadio" layoutX="9.0" layoutY="72.0" mnemonicParsing="false" text="Должность" toggleGroup="$radioGroup" />
+            <RadioButton fx:id="hoursWorkedRadio" layoutX="108.0" layoutY="41.0" mnemonicParsing="false" text="Отработанные часы" toggleGroup="$radioGroup" />
          </children>
       </Pane>
    </children>

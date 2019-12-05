@@ -270,34 +270,6 @@ public class EquipmentWindowController {
 
 
 
-
-    @FXML
-    void equipmentButtonClicked(ActionEvent event) {
-        try {
-            Stage stage = Main.getPrimaryStage();
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("../sample/forms/EquipmentWindow.fxml")));
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException | NullPointerException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @FXML
-    void exitButtonClicked(ActionEvent event) {
-        connection.makeQuery("endSession");
-        try {
-            Stage stage = Main.getPrimaryStage();
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("../sample/forms/SignInWindow.fxml")));
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException | NullPointerException e) {
-            e.printStackTrace();
-        }
-    }
-
-
-
     public void initialize(){
         connection = Connection.getInstance();
         alert = AlertWindow.getAlert();
@@ -334,6 +306,73 @@ public class EquipmentWindowController {
         gasField.setText("");
     }
 
+
+
+
+
+
+    @FXML
+    void equipmentButtonClicked(ActionEvent event) {
+        try {
+            Stage stage = Main.getPrimaryStage();
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("../sample/forms/EquipmentWindow.fxml")));
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException | NullPointerException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    void workerButtonClicked(ActionEvent event) {
+        try {
+            Stage stage = Main.getPrimaryStage();
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("../sample/forms/WorkerWindow.fxml")));
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException | NullPointerException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    void fixCostsButtonClicked(ActionEvent event) {
+        System.out.println("fix");
+    }
+
+    @FXML
+    void variableCostsButtonClicked(ActionEvent event) {
+        System.out.println("var");
+    }
+
+    @FXML
+    void tariffButtonClicked(ActionEvent event) {
+        System.out.println("tariff");
+    }
+
+    @FXML
+    void historyButtonClicked(ActionEvent event) {
+        System.out.println("history");
+    }
+
+    @FXML
+    void resultButtonClicked(ActionEvent event) {
+        System.out.println("result");
+    }
+
+
+    @FXML
+    void exitButtonClicked(ActionEvent event) {
+        connection.makeQuery("endSession");
+        try {
+            Stage stage = Main.getPrimaryStage();
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("../sample/forms/SignInWindow.fxml")));
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException | NullPointerException e) {
+            e.printStackTrace();
+        }
+    }
 }
 
 

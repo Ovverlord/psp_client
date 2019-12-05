@@ -28,7 +28,7 @@
 
     <build>
 
-        <finalName>psp-07</finalName>       <!--file name-->
+        <finalName>psp_client</finalName>       <!--file name-->
 
         <resources>
 
