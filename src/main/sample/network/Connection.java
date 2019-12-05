@@ -3,6 +3,7 @@ package network;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.net.ConnectException;
 import java.net.Socket;
 
 public class Connection {
@@ -14,10 +15,17 @@ public class Connection {
     DataInputStream in;
     Connection() {
         try {
-            clientSocket = new Socket(SERVER_HOST, SERVER_PORT);
-            in = new DataInputStream(clientSocket.getInputStream());
-            out = new DataOutputStream(clientSocket.getOutputStream());
-            System.out.println(clientSocket);
+            try
+            {
+                clientSocket = new Socket(SERVER_HOST, SERVER_PORT);
+                in = new DataInputStream(clientSocket.getInputStream());
+                out = new DataOutputStream(clientSocket.getOutputStream());
+                System.out.println(clientSocket);
+            }
+            catch (ConnectException ex)
+            {
+                ex.printStackTrace();
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }

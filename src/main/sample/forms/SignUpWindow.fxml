@@ -9,23 +9,23 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="525.0" prefWidth="697.0" style="-fx-background-color: #fcfcf7;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SignUpWindowController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="900.0" style="-fx-background-color: #fcfcf7;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SignUpWindowController">
    <children>
-      <Button fx:id="SignUpButton" layoutX="244.0" layoutY="383.0" mnemonicParsing="false" onAction="#SignUpButtonClicked" prefHeight="39.0" prefWidth="210.0" style="-fx-background-color: #4545e0;" text="Регистрация" textFill="WHITE" />
+      <Button fx:id="SignUpButton" layoutX="346.0" layoutY="405.0" mnemonicParsing="false" onAction="#SignUpButtonClicked" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: #4545e0;" text="Регистрация" textFill="WHITE" />
       <Button fx:id="backButton" layoutX="464.0" layoutY="22.0" mnemonicParsing="false" onAction="#backButtonClicked" prefHeight="25.0" prefWidth="122.0" style="-fx-background-color: #4545e0;" text="Назад" textFill="WHITE" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="22.0" />
-      <TextField fx:id="loginField" layoutX="240.0" layoutY="263.0" prefHeight="25.0" prefWidth="217.0" promptText="Логин" />
-      <PasswordField fx:id="passwordField" layoutX="240.0" layoutY="305.0" prefHeight="25.0" prefWidth="217.0" promptText="Пароль" />
-      <ImageView fitHeight="23.0" fitWidth="25.0" layoutX="209.0" layoutY="306.0" pickOnBounds="true" preserveRatio="true">
+      <TextField fx:id="loginField" layoutX="341.0" layoutY="263.0" prefHeight="25.0" prefWidth="217.0" promptText="Логин" />
+      <PasswordField fx:id="passwordField" layoutX="341.0" layoutY="305.0" prefHeight="25.0" prefWidth="217.0" promptText="Пароль" />
+      <ImageView fitHeight="23.0" fitWidth="25.0" layoutX="308.0" layoutY="306.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../recources/images/Password.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="208.0" layoutY="265.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="308.0" layoutY="265.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../recources/images/User.png" />
          </image>
       </ImageView>
-      <Label layoutX="172.0" layoutY="124.0" text="Регистрация пользователя" textFill="#878693">
+      <Label layoutX="274.0" layoutY="160.0" text="Регистрация пользователя" textFill="#878693">
          <font>
             <Font size="29.0" />
          </font>

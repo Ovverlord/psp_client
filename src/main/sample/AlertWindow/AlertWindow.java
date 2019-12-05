@@ -33,12 +33,12 @@ public class AlertWindow {
         alert.showAndWait();
     }
 
-    public void chooseUser()
+    public void chooseNote()
     {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Информация");
         alert.setHeaderText(null);
-        alert.setContentText("Укажите пользователя");
+        alert.setContentText("Укажите запись");
         alert.showAndWait();
     }
 
@@ -57,6 +57,43 @@ public class AlertWindow {
         alert.setTitle("Информация");
         alert.setHeaderText(null);
         alert.setContentText("Пользователь не найден");
+        alert.showAndWait();
+    }
+
+    public void setRole()
+    {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Информация");
+        alert.setHeaderText(null);
+        alert.setContentText("Укажите роль пользователя");
+        alert.showAndWait();
+    }
+
+    public void belowZero()
+    {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Ошибка");
+        alert.setHeaderText(null);
+        alert.setContentText("Значения не могут быть отрицательные");
+        alert.showAndWait();
+    }
+
+
+    public void notInteger()
+    {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Ошибка");
+        alert.setHeaderText(null);
+        alert.setContentText("Введите целочисленные значения");
+        alert.showAndWait();
+    }
+
+    public void equipmentNotFound()
+    {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Информация");
+        alert.setHeaderText(null);
+        alert.setContentText("Оборудование не найдено");
         alert.showAndWait();
     }
 }

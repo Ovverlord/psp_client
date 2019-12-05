@@ -75,11 +75,8 @@ public class AdminWindowController {
             role = "1";
         }
         else{
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Информация");
-            alert.setHeaderText(null);
-            alert.setContentText("Укажите роль пользователя");
-            alert.showAndWait();
+            alert.setRole();
+            return;
         }
 
         connection.makeQuery("addUser//"+ JSONParser.jsonFromObject(new User(loginField.getText(),passwordField.getText(), role)));
@@ -113,7 +110,7 @@ public class AdminWindowController {
             }
         }
         else{
-            alert.chooseUser();
+            alert.chooseNote();
         }
     }
 
@@ -143,7 +140,7 @@ public class AdminWindowController {
             }
         }
         else{
-            alert.chooseUser();
+            alert.chooseNote();
         }
     }
 
@@ -182,11 +179,14 @@ public class AdminWindowController {
         }
     }
 
-
+    @FXML
+    void refreshTableButtonClicked(ActionEvent event) {
+        refresh();
+    }
 
     @FXML
     void resetSearchButtonClicked(ActionEvent event) {
-       refresh();
+        refresh();
     }
 
 
@@ -237,5 +237,7 @@ public class AdminWindowController {
     {
         usersTable.getItems().clear();
         show();
+        loginField.setText("");
+        passwordField.setText("");
     }
 }

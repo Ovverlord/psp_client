@@ -65,7 +65,14 @@ public class SignUpWindowController {
         }
         else
         {
-            System.out.println("start user window");
+            try {
+                Stage stage = Main.getPrimaryStage();
+                Scene scene = new Scene(FXMLLoader.load(getClass().getResource("../sample/forms/EquipmentWindow.fxml")));
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException | NullPointerException e) {
+                e.printStackTrace();
+            }
         }
     }
 

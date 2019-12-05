@@ -74,19 +74,15 @@ public class SignInWindowController {
         }
         else
         {
-            System.out.println("user");
+            try {
+                Stage stage = Main.getPrimaryStage();
+                Scene scene = new Scene(FXMLLoader.load(getClass().getResource("../sample/forms/EquipmentWindow.fxml")));
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException | NullPointerException e) {
+                e.printStackTrace();
+            }
         }
-
-//        try {
-//            Stage stage = Main.getPrimaryStage();
-
-//            stage.setScene(scene);
-//            stage.show();
-//
-//        } catch (IOException | NullPointerException e) {
-//            e.printStackTrace();
-//            System.out.println("ошибка подключения");
-//        }
     }
 
     @FXML
