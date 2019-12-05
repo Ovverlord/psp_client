@@ -336,18 +336,20 @@ public class EquipmentWindowController {
     }
 
     @FXML
-    void fixCostsButtonClicked(ActionEvent event) {
+    void materialsButtonClicked(ActionEvent event) {
         System.out.println("fix");
     }
 
     @FXML
-    void variableCostsButtonClicked(ActionEvent event) {
-        System.out.println("var");
-    }
-
-    @FXML
     void tariffButtonClicked(ActionEvent event) {
-        System.out.println("tariff");
+        try {
+            Stage stage = Main.getPrimaryStage();
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("../sample/forms/TariffWindow.fxml")));
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException | NullPointerException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML

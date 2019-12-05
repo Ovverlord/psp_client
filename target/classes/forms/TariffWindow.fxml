@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="900.0" style="-fx-background-color: #fcfcf7;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.TariffWindowController">
+   <children>
+      <ToolBar layoutX="-1.0" layoutY="-1.0" prefHeight="69.0" prefWidth="838.0" style="-fx-background-color: #4545e0;">
+         <items>
+            <Button mnemonicParsing="false" onAction="#equipmentButtonClicked" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #5bc0de;" text="Оборудование" textAlignment="CENTER" textFill="WHITE" />
+            <Button mnemonicParsing="false" onAction="#workerButtonClicked" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: #5bc0de;" text="Рабочие" textAlignment="CENTER" textFill="WHITE" />
+            <Button mnemonicParsing="false" onAction="#materialsButtonClicked" prefHeight="25.0" prefWidth="135.0" style="-fx-background-color: #5bc0de;" text="Материалы" textAlignment="CENTER" textFill="WHITE" />
+            <Button mnemonicParsing="false" onAction="#tariffButtonClicked" prefHeight="25.0" prefWidth="78.0" style="-fx-background-color: #5bc0de;" text="Тарифы" textFill="WHITE" />
+            <Button mnemonicParsing="false" onAction="#historyButtonClicked" prefHeight="25.0" prefWidth="84.0" style="-fx-background-color: #5bc0de;" text="История" textAlignment="CENTER" textFill="WHITE" />
+            <Button mnemonicParsing="false" onAction="#resultButtonClicked" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #5cb85c;" text="Расчет" textAlignment="CENTER" textFill="WHITE" />
+         </items>
+      </ToolBar>
+      <ToolBar layoutX="836.0" layoutY="-1.0" prefHeight="69.0" prefWidth="64.0" style="-fx-background-color: #4545e0;">
+         <items>
+            <Button mnemonicParsing="false" onAction="#exitButtonClicked" style="-fx-background-color: #d9534f;" text="Выход" textAlignment="CENTER" textFill="WHITE" />
+         </items>
+      </ToolBar>
+      <TableView fx:id="tariffTable" layoutY="68.0" prefHeight="308.0" prefWidth="900.0">
+         <columns>
+            <TableColumn fx:id="energyCostColumn" prefWidth="300.0" text="Стоимость единицы энергии" />
+            <TableColumn fx:id="gasCostColumn" prefWidth="300.0" text="Стоимость единицы газа" />
+            <TableColumn fx:id="rentCostColumn" prefWidth="300.0" text="Стоимость аренды помещения" />
+         </columns>
+      </TableView>
+      <Button layoutX="273.0" layoutY="501.0" mnemonicParsing="false" onAction="#deleteButtonClicked" prefHeight="25.0" prefWidth="98.0" style="-fx-background-color: #d9534f;" text="Удалить" textAlignment="CENTER" textFill="WHITE" />
+      <Button fx:id="addButton" layoutX="273.0" layoutY="437.0" mnemonicParsing="false" onAction="#addButtonClicked" prefHeight="25.0" prefWidth="98.0" style="-fx-background-color: #5cb85c;" text="Добавить" textAlignment="CENTER" textFill="WHITE" />
+      <Button layoutX="273.0" layoutY="469.0" mnemonicParsing="false" onAction="#editButtonClicked" prefHeight="25.0" prefWidth="98.0" style="-fx-background-color: #f0ad4e;" text="Редактировать" textAlignment="CENTER" textFill="WHITE" />
+      <TextField fx:id="energyCostField" layoutX="24.0" layoutY="437.0" prefHeight="25.0" prefWidth="215.0" promptText="Стоимость единицы энергии" />
+      <TextField fx:id="gasCostField" layoutX="24.0" layoutY="469.0" prefHeight="25.0" prefWidth="215.0" promptText="Стоимость единицы газа" />
+      <TextField fx:id="rentCostField" layoutX="24.0" layoutY="501.0" prefHeight="25.0" prefWidth="215.0" promptText="Стоимость аренды помещения" />
+   </children>
+</AnchorPane>

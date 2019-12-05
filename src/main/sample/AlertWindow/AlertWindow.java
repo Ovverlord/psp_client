@@ -105,4 +105,13 @@ public class AlertWindow {
         alert.setContentText("Работники не найдены");
         alert.showAndWait();
     }
+
+    public void incorrectNumberInput()
+    {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Ошибка");
+        alert.setHeaderText(null);
+        alert.setContentText("Введите числовые значения");
+        alert.showAndWait();
+    }
 }

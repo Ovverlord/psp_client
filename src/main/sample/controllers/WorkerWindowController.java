@@ -391,7 +391,19 @@ public class WorkerWindowController {
     }
 
     @FXML
-    void fixCostsButtonClicked(ActionEvent event) {
+    void tariffButtonClicked(ActionEvent event) {
+        try {
+            Stage stage = Main.getPrimaryStage();
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("../sample/forms/TariffWindow.fxml")));
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException | NullPointerException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    void materialsButtonClicked(ActionEvent event) {
 
     }
 
@@ -408,16 +420,6 @@ public class WorkerWindowController {
     }
 
 
-
-    @FXML
-    void tariffButtonClicked(ActionEvent event) {
-
-    }
-
-    @FXML
-    void variableCostsButtonClicked(ActionEvent event) {
-
-    }
 
 
     @FXML
