@@ -337,7 +337,14 @@ public class EquipmentWindowController {
 
     @FXML
     void materialsButtonClicked(ActionEvent event) {
-        System.out.println("fix");
+        try {
+            Stage stage = Main.getPrimaryStage();
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("../sample/forms/MaterialWindow.fxml")));
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException | NullPointerException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML

@@ -114,4 +114,13 @@ public class AlertWindow {
         alert.setContentText("Введите числовые значения");
         alert.showAndWait();
     }
+
+    public void materialNotFound()
+    {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Информация");
+        alert.setHeaderText(null);
+        alert.setContentText("Материал не найден");
+        alert.showAndWait();
+    }
 }

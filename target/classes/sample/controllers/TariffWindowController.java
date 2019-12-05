@@ -233,6 +233,18 @@ public class TariffWindowController {
     }
 
     @FXML
+    void materialsButtonClicked(ActionEvent event) {
+        try {
+            Stage stage = Main.getPrimaryStage();
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("../sample/forms/MaterialWindow.fxml")));
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException | NullPointerException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
     void tariffButtonClicked(ActionEvent event) {
         try {
             Stage stage = Main.getPrimaryStage();
@@ -242,11 +254,6 @@ public class TariffWindowController {
         } catch (IOException | NullPointerException e) {
             e.printStackTrace();
         }
-    }
-
-    @FXML
-    void materialsButtonClicked(ActionEvent event) {
-
     }
 
 
