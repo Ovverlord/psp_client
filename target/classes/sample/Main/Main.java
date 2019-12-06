@@ -13,7 +13,6 @@ public class Main extends Application {
 
     public static Stage mainStage;
 
-
     private void setPrimaryStage(Stage stage) {
         Main.mainStage = stage;
     }

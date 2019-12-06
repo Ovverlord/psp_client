@@ -72,8 +72,8 @@ public class EquipmentWindowController {
     @FXML
     void addButtonClicked(ActionEvent event) {
         Integer hoursWorked=0;
-        Integer energy=0;
-        Integer gas=0;
+        Double energy = 0.0;
+        Double gas = 0.0;
         boolean flag = false;
 
         if(nameField.getText().length()==0)
@@ -111,8 +111,8 @@ public class EquipmentWindowController {
         try
         {
             hoursWorked = Integer.valueOf(hoursWorkedField.getText().trim());
-            energy = Integer.valueOf(energyField.getText().trim());
-            gas = Integer.valueOf(gasField.getText().trim());
+            energy = Double.valueOf(energyField.getText().trim());
+            gas = Double.valueOf(gasField.getText().trim());
             if(hoursWorked<0 || energy<0 || gas<0)
             {
                 throw new IOException();
@@ -120,7 +120,7 @@ public class EquipmentWindowController {
         }
         catch (NumberFormatException ex)
         {
-            alert.notInteger();
+            alert.incorrectNumberInput();
             return;
         }
         catch (IOException ex)
@@ -170,11 +170,11 @@ public class EquipmentWindowController {
                 }
                 if(energyField.getText().length()!=0)
                 {
-                    obj.setEnergy(Integer.valueOf(energyField.getText()));
+                    obj.setEnergy(Double.valueOf(energyField.getText()));
                 }
                 if(gasField.getText().length()!=0)
                 {
-                    obj.setGas(Integer.valueOf(gasField.getText()));
+                    obj.setGas(Double.valueOf(gasField.getText()));
                 }
             }
             catch (NumberFormatException ex)
@@ -361,12 +361,26 @@ public class EquipmentWindowController {
 
     @FXML
     void historyButtonClicked(ActionEvent event) {
-        System.out.println("history");
+        try {
+            Stage stage = Main.getPrimaryStage();
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("../sample/forms/ResultWindow.fxml")));
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException | NullPointerException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     void resultButtonClicked(ActionEvent event) {
-        System.out.println("result");
+        try {
+            Stage stage = Main.getPrimaryStage();
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("../sample/forms/CalculationWindow.fxml")));
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException | NullPointerException e) {
+            e.printStackTrace();
+        }
     }
 
 

@@ -4,11 +4,11 @@ public class Equipment {
     private String name;
     private String model;
     private Integer hoursworked;
-    private Integer energy;
-    private Integer gas;
+    private Double energy;
+    private Double gas;
     private Integer id;
 
-    public Equipment(String name, String model, Integer hoursWorked, Integer energy, Integer gas, Integer id) {
+    public Equipment(String name, String model, Integer hoursWorked, Double energy, Double gas, Integer id) {
         this.name = name;
         this.model = model;
         this.hoursworked = hoursWorked;
@@ -17,7 +17,7 @@ public class Equipment {
         this.id = id;
     }
 
-    public Equipment(String name, String model, Integer hoursWorked, Integer energy, Integer gas) {
+    public Equipment(String name, String model, Integer hoursWorked, Double energy, Double gas) {
         this.name = name;
         this.model = model;
         this.hoursworked = hoursWorked;
@@ -49,19 +49,19 @@ public class Equipment {
         this.hoursworked = hoursWorked;
     }
 
-    public Integer getEnergy() {
+    public Double getEnergy() {
         return energy;
     }
 
-    public void setEnergy(Integer energy) {
+    public void setEnergy(Double energy) {
         this.energy = energy;
     }
 
-    public Integer getGas() {
+    public Double getGas() {
         return gas;
     }
 
-    public void setGas(Integer gas) {
+    public void setGas(Double gas) {
         this.gas = gas;
     }
 

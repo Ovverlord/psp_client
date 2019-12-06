@@ -123,4 +123,23 @@ public class AlertWindow {
         alert.setContentText("Материал не найден");
         alert.showAndWait();
     }
+
+    public void saveResult()
+    {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Информация");
+        alert.setHeaderText(null);
+        alert.setContentText("Результат сохранен");
+        alert.showAndWait();
+    }
+
+    public void resultsNotFound()
+    {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Информация");
+        alert.setHeaderText(null);
+        alert.setContentText("Данные не найдены");
+        alert.showAndWait();
+    }
+
 }

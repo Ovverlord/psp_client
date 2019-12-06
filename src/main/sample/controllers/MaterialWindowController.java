@@ -173,7 +173,7 @@ public class MaterialWindowController {
                     new Material(nameField.getText(), null, null)));
             Material materials[] = JSONParser.objectFromJson(connection.getResponse(), Material[].class);
             if (materials.length == 0) {
-                alert.equipmentNotFound();
+                alert.materialNotFound();
             } else {
                 materialTable.getItems().clear();
                 for (Material material : materials) {
@@ -200,7 +200,7 @@ public class MaterialWindowController {
                     new Material(null, unitCost, null)));
             Material materials[] = JSONParser.objectFromJson(connection.getResponse(), Material[].class);
             if (materials.length == 0) {
-                alert.equipmentNotFound();
+                alert.materialNotFound();
             } else {
                 materialTable.getItems().clear();
                 for (Material material : materials) {
@@ -228,7 +228,7 @@ public class MaterialWindowController {
                     new Material(null, null, usedAmount)));
             Material materials[] = JSONParser.objectFromJson(connection.getResponse(), Material[].class);
             if (materials.length == 0) {
-                alert.equipmentNotFound();
+                alert.materialNotFound();
             } else {
                 materialTable.getItems().clear();
                 for (Material material : materials) {
@@ -328,14 +328,28 @@ public class MaterialWindowController {
 
     @FXML
     void historyButtonClicked(ActionEvent event) {
-        System.out.println("history");
+
+        try {
+            Stage stage = Main.getPrimaryStage();
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("../sample/forms/ResultWindow.fxml")));
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException | NullPointerException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     void resultButtonClicked(ActionEvent event) {
-        System.out.println("result");
+        try {
+            Stage stage = Main.getPrimaryStage();
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("../sample/forms/CalculationWindow.fxml")));
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException | NullPointerException e) {
+            e.printStackTrace();
+        }
     }
-
 
     @FXML
     void exitButtonClicked(ActionEvent event) {

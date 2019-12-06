@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="900.0" style="-fx-background-color: #fcfcf7;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ResultWindowController">
+   <children>
+      <ToolBar layoutX="-1.0" layoutY="-1.0" prefHeight="69.0" prefWidth="838.0" style="-fx-background-color: #4545e0;">
+         <items>
+            <Button mnemonicParsing="false" onAction="#equipmentButtonClicked" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #5bc0de;" text="Оборудование" textAlignment="CENTER" textFill="WHITE" />
+            <Button mnemonicParsing="false" onAction="#workerButtonClicked" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: #5bc0de;" text="Рабочие" textAlignment="CENTER" textFill="WHITE" />
+            <Button mnemonicParsing="false" onAction="#materialsButtonClicked" prefHeight="25.0" prefWidth="135.0" style="-fx-background-color: #5bc0de;" text="Материалы" textAlignment="CENTER" textFill="WHITE" />
+            <Button mnemonicParsing="false" onAction="#tariffButtonClicked" prefHeight="25.0" prefWidth="78.0" style="-fx-background-color: #5bc0de;" text="Тарифы" textFill="WHITE" />
+            <Button mnemonicParsing="false" onAction="#historyButtonClicked" prefHeight="25.0" prefWidth="84.0" style="-fx-background-color: #5bc0de;" text="История" textAlignment="CENTER" textFill="WHITE" />
+            <Button mnemonicParsing="false" onAction="#resultButtonClicked" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #5cb85c;" text="Расчет" textAlignment="CENTER" textFill="WHITE" />
+         </items>
+      </ToolBar>
+      <ToolBar layoutX="836.0" layoutY="-1.0" prefHeight="69.0" prefWidth="64.0" style="-fx-background-color: #4545e0;">
+         <items>
+            <Button mnemonicParsing="false" onAction="#exitButtonClicked" style="-fx-background-color: #d9534f;" text="Выход" textAlignment="CENTER" textFill="WHITE" />
+         </items>
+      </ToolBar>
+      <TableView fx:id="resultTable" layoutY="68.0" prefHeight="308.0" prefWidth="900.0">
+         <columns>
+            <TableColumn fx:id="energyColumn" prefWidth="150.0" text="Затраты на энергию" />
+            <TableColumn fx:id="gasColumn" prefWidth="150.0" text="Затраты на газ" />
+            <TableColumn fx:id="rentColumn" prefWidth="150.0" text="Затраты на аренду" />
+            <TableColumn fx:id="materialColumn" prefWidth="150.0" text="Затраты на материалы " />
+            <TableColumn fx:id="wageColumn" prefWidth="150.0" text="Затраты на зарплату" />
+            <TableColumn fx:id="costColumn" prefWidth="150.0" text="Себестоимость выпуска" />
+         </columns>
+      </TableView>
+      <Button layoutX="206.0" layoutY="456.0" mnemonicParsing="false" onAction="#deleteButtonClicked" prefHeight="25.0" prefWidth="98.0" style="-fx-background-color: #d9534f;" text="Удалить" textAlignment="CENTER" textFill="WHITE" />
+      <Pane layoutX="325.0" layoutY="417.0" prefHeight="104.0" prefWidth="336.0" style="-fx-border-color: #292b2c;">
+         <children>
+            <Button layoutX="12.0" layoutY="7.0" mnemonicParsing="false" onAction="#searchButtonClicked" prefHeight="25.0" prefWidth="98.0" style="-fx-background-color: #292b2c;" text="Поиск" textFill="WHITE" />
+            <Button layoutX="198.0" layoutY="7.0" mnemonicParsing="false" onAction="#resetSearchButtonClicked" prefHeight="25.0" prefWidth="98.0" style="-fx-background-color: #292b2c;" text="Сброс поиска" textFill="WHITE" />
+            <RadioButton fx:id="costRadio" layoutX="9.0" layoutY="41.0" mnemonicParsing="false" text="Себестоимость выпуска">
+               <toggleGroup>
+                  <ToggleGroup fx:id="radioGroup" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="wageCostRadio" layoutX="9.0" layoutY="72.0" mnemonicParsing="false" text="Затраты на зарплату" toggleGroup="$radioGroup" />
+            <RadioButton fx:id="materialCostRadio" layoutX="182.0" layoutY="41.0" mnemonicParsing="false" text="Затраты на материалы" toggleGroup="$radioGroup" />
+         </children>
+      </Pane>
+      <TextField fx:id="costField" layoutX="21.0" layoutY="431.0" promptText="Себестоимость выпуска" />
+      <TextField fx:id="wageCostField" layoutX="21.0" layoutY="468.0" promptText="Затраты на зарплату" />
+      <TextField fx:id="materialCostField" layoutX="21.0" layoutY="508.0" promptText="Затраты на материалы" />
+   </children>
+</AnchorPane>

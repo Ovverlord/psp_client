@@ -260,11 +260,25 @@ public class TariffWindowController {
     @FXML
     void historyButtonClicked(ActionEvent event) {
 
+        try {
+            Stage stage = Main.getPrimaryStage();
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("../sample/forms/ResultWindow.fxml")));
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException | NullPointerException e) {
+            e.printStackTrace();
+        }
     }
-
 
     @FXML
     void resultButtonClicked(ActionEvent event) {
-
+        try {
+            Stage stage = Main.getPrimaryStage();
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("../sample/forms/CalculationWindow.fxml")));
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException | NullPointerException e) {
+            e.printStackTrace();
+        }
     }
 }
