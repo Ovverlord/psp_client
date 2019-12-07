@@ -65,7 +65,8 @@ public class CalculationWindowController {
 
     @FXML
     void generateReportButtonClicked(ActionEvent event) {
-
+        connection.makeQuery("generateReport//"+ JSONParser.jsonFromObject(result));
+        alert.generateReport();
     }
 
     public void initialize(){
@@ -77,8 +78,8 @@ public class CalculationWindowController {
     public void show()
     {
         connection.makeQuery("calculateCost//" + JSONParser.jsonFromObject(
-                new Result(null, null, null,
-                        null,null,null,null)));
+                new Result(0.0, 0.0, 0.0,
+                        0,0.0,0.0,0)));
         result = JSONParser.objectFromJson(connection.getResponse(), Result.class);
 
         finalEnergyCostField.setText(String.valueOf(result.getFinalEnergyCost()));
@@ -97,7 +98,6 @@ public class CalculationWindowController {
         PieChart diagramChart = new PieChart(oblist);
         diagramChart.setTitle("Диаграмма долей затрат");
         diagrammPane.getChildren().add(diagramChart);
-
     }
 
 

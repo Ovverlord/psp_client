@@ -142,4 +142,13 @@ public class AlertWindow {
         alert.showAndWait();
     }
 
+    public void generateReport()
+    {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Информация");
+        alert.setHeaderText(null);
+        alert.setContentText("Отчет создан");
+        alert.showAndWait();
+    }
+
 }

@@ -194,8 +194,16 @@ public class MaterialWindowController {
             if (flag) {
                 return;
             }
+            try
+            {
+                unitCost = Double.valueOf(unitCostField.getText().trim());
+            }
+            catch (NumberFormatException ex)
+            {
+                alert.incorrectNumberInput();
+                return;
+            }
 
-            unitCost = Double.valueOf(unitCostField.getText());
             connection.makeQuery("searchMaterialByUnitCost//" + JSONParser.jsonFromObject(
                     new Material(null, unitCost, null)));
             Material materials[] = JSONParser.objectFromJson(connection.getResponse(), Material[].class);
@@ -223,7 +231,15 @@ public class MaterialWindowController {
                 return;
             }
 
-            usedAmount = Double.valueOf(usedAmountField.getText());
+            try
+            {
+                usedAmount = Double.valueOf(usedAmountField.getText().trim());
+            }
+            catch (NumberFormatException ex)
+            {
+                alert.incorrectNumberInput();
+                return;
+            }
             connection.makeQuery("searchMaterialByUnitCost//" + JSONParser.jsonFromObject(
                     new Material(null, null, usedAmount)));
             Material materials[] = JSONParser.objectFromJson(connection.getResponse(), Material[].class);

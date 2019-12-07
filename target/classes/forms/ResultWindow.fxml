@@ -27,7 +27,7 @@
             <Button mnemonicParsing="false" onAction="#exitButtonClicked" style="-fx-background-color: #d9534f;" text="Выход" textAlignment="CENTER" textFill="WHITE" />
          </items>
       </ToolBar>
-      <TableView fx:id="resultTable" layoutY="68.0" prefHeight="308.0" prefWidth="900.0">
+      <TableView fx:id="resultTable" layoutY="68.0" prefHeight="278.0" prefWidth="900.0">
          <columns>
             <TableColumn fx:id="energyColumn" prefWidth="150.0" text="Затраты на энергию" />
             <TableColumn fx:id="gasColumn" prefWidth="150.0" text="Затраты на газ" />
@@ -37,8 +37,8 @@
             <TableColumn fx:id="costColumn" prefWidth="150.0" text="Себестоимость выпуска" />
          </columns>
       </TableView>
-      <Button layoutX="206.0" layoutY="456.0" mnemonicParsing="false" onAction="#deleteButtonClicked" prefHeight="25.0" prefWidth="98.0" style="-fx-background-color: #d9534f;" text="Удалить" textAlignment="CENTER" textFill="WHITE" />
-      <Pane layoutX="325.0" layoutY="417.0" prefHeight="104.0" prefWidth="336.0" style="-fx-border-color: #292b2c;">
+      <Button layoutX="197.0" layoutY="503.0" mnemonicParsing="false" onAction="#deleteButtonClicked" prefHeight="25.0" prefWidth="98.0" style="-fx-background-color: #d9534f;" text="Удалить" textAlignment="CENTER" textFill="WHITE" />
+      <Pane layoutX="197.0" layoutY="387.0" prefHeight="104.0" prefWidth="336.0" style="-fx-border-color: #292b2c;">
          <children>
             <Button layoutX="12.0" layoutY="7.0" mnemonicParsing="false" onAction="#searchButtonClicked" prefHeight="25.0" prefWidth="98.0" style="-fx-background-color: #292b2c;" text="Поиск" textFill="WHITE" />
             <Button layoutX="198.0" layoutY="7.0" mnemonicParsing="false" onAction="#resetSearchButtonClicked" prefHeight="25.0" prefWidth="98.0" style="-fx-background-color: #292b2c;" text="Сброс поиска" textFill="WHITE" />
@@ -51,8 +51,9 @@
             <RadioButton fx:id="materialCostRadio" layoutX="182.0" layoutY="41.0" mnemonicParsing="false" text="Затраты на материалы" toggleGroup="$radioGroup" />
          </children>
       </Pane>
-      <TextField fx:id="costField" layoutX="21.0" layoutY="431.0" promptText="Себестоимость выпуска" />
-      <TextField fx:id="wageCostField" layoutX="21.0" layoutY="468.0" promptText="Затраты на зарплату" />
-      <TextField fx:id="materialCostField" layoutX="21.0" layoutY="508.0" promptText="Затраты на материалы" />
+      <TextField fx:id="costField" layoutX="21.0" layoutY="426.0" promptText="Себестоимость выпуска" />
+      <TextField fx:id="wageCostField" layoutX="21.0" layoutY="465.0" promptText="Затраты на зарплату" />
+      <TextField fx:id="materialCostField" layoutX="21.0" layoutY="503.0" promptText="Затраты на материалы" />
+      <Button layoutX="607.0" layoutY="503.0" mnemonicParsing="false" onAction="#graphicButtonClicked" prefHeight="25.0" prefWidth="217.0" style="-fx-background-color: #5cb85c;" text="График изменения себестоимости" textAlignment="CENTER" textFill="WHITE" />
    </children>
 </AnchorPane>

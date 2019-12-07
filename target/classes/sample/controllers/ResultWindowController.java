@@ -11,12 +11,18 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import network.Connection;
 import network.JSONParser;
@@ -67,10 +73,14 @@ public class ResultWindowController {
     @FXML
     private TextField materialCostField;
 
+    @FXML
+    private Pane graphicPane;
+
 
     Connection connection;
     AlertWindow alert;
     ObservableList<Result> oblist = FXCollections.observableArrayList();
+    ObservableList<LineChart.Data> graphicList = FXCollections.observableArrayList();
 
     @FXML
     void deleteButtonClicked(ActionEvent event) {
@@ -126,7 +136,16 @@ public class ResultWindowController {
                 return;
             }
 
-            Integer cost = Integer.valueOf(wageCostField.getText().trim());
+            Integer cost;
+            try
+            {
+                cost = Integer.valueOf(wageCostField.getText().trim());
+            }
+            catch (NumberFormatException ex)
+            {
+                alert.notInteger();
+                return;
+            }
             connection.makeQuery("searchResultByWageCost//" + JSONParser.jsonFromObject(
                     new Result(null,null,null,
                             cost,null,null)));
@@ -154,7 +173,16 @@ public class ResultWindowController {
                 return;
             }
 
-            Double cost = Double.valueOf(materialCostField.getText().trim());
+            Double cost;
+            try
+            {
+                cost = Double.valueOf(materialCostField.getText().trim());
+            }
+            catch (NumberFormatException ex)
+            {
+                alert.incorrectNumberInput();
+                return;
+            }
             connection.makeQuery("searchResultByMaterialCost//" + JSONParser.jsonFromObject(
                     new Result(null,null,null,
                             null,cost,null)));
@@ -170,13 +198,36 @@ public class ResultWindowController {
                 resultTable.setItems(oblist);
             }
         }
-
-
     }
 
     @FXML
     void resetSearchButtonClicked(ActionEvent event) {
         refresh();
+    }
+
+
+    @FXML
+    void graphicButtonClicked(ActionEvent event) {
+        Stage stage = new Stage();
+        HBox root = new HBox();
+        Scene scene = new Scene(root,500,500);
+        stage.getIcons().add(new Image("@../../recources/images/Graphic.png"));
+        final NumberAxis xAxis = new NumberAxis();
+        final NumberAxis yAxis = new NumberAxis();
+        final LineChart<Number, Number> lineChart = new LineChart<>(xAxis, yAxis);
+        XYChart.Series series = new XYChart.Series();
+        series.setName("Изменение себестоимости выпуска");
+        int i =0;
+        while(i<oblist.size())
+        {
+            Result result = oblist.get(i);
+            series.getData().add(new XYChart.Data(i,result.getFinalCost()));
+            i++;
+        }
+        lineChart.getData().add(series);
+        root.getChildren().add(lineChart);
+        stage.setScene(scene);
+        stage.show();
     }
 
 
@@ -202,6 +253,30 @@ public class ResultWindowController {
             oblist.add(result);
         }
         resultTable.setItems(oblist);
+
+
+//        graphicPane.getChildren().clear();
+//
+//        graphicPane.getChildren().add(lineChart);
+//        LineChart<Double,Integer> lineChart = null;
+//        XYChart.Series<Double,Integer> graphic = new XYChart.Series<Double, Integer>();
+//        for(int i=0;i<oblist.size();i++)
+//        {
+//            Double cost = Double.valueOf(costColumn.getText());
+//        graphic.getData().add(new XYChart.Data<Double, Integer>(cost,i));
+//        }
+//
+//        lineChart.getData().addAll();
+
+//        diagrammPane.getChildren().clear();
+//        oblist.add(new PieChart.Data("Затраты на энергию",result.getFinalEnergyCost()));
+//        oblist.add(new PieChart.Data("Затраты на газ",result.getFinalGasCost()));
+//        oblist.add(new PieChart.Data("Затраты на зарплаты",result.getFinalWageCost()));
+//        oblist.add(new PieChart.Data("Затраты на материалы",result.getFinalMaterialCost()));
+//        oblist.add(new PieChart.Data("Затраты на аренду",result.getFinalRentCost()));
+//        PieChart diagramChart = new PieChart(oblist);
+//        diagramChart.setTitle("Диаграмма долей затрат");
+//        diagrammPane.getChildren().add(diagramChart);
     }
 
     public void refresh()
