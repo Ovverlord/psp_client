@@ -191,6 +191,19 @@ public class AdminWindowController {
 
 
     @FXML
+    void statButtonClicked(ActionEvent event) {
+        try {
+            Stage stage = Main.getPrimaryStage();
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("../sample/forms/UserResultWindow.fxml")));
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException | NullPointerException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @FXML
     void exitButtonClicked(ActionEvent event) {
         connection.makeQuery("endSession");
         try {

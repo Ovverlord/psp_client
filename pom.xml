@@ -55,7 +55,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>app.Main.Main</mainClass>         <!--main class-->
+                            <mainClass>Main.Main</mainClass>         <!--main class-->
                         </manifest>
                     </archive>
                     <descriptorRefs>

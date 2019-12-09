@@ -1,31 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="900.0" style="-fx-background-color: #fcfcf7;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AdminWindowController">
    <children>
       <ToolBar layoutX="-1.0" layoutY="-1.0" prefHeight="69.0" prefWidth="840.0" style="-fx-background-color: #4545e0;">
          <items>
             <Button mnemonicParsing="false" onAction="#refreshTableButtonClicked" prefHeight="25.0" prefWidth="136.0" style="-fx-background-color: #f0ad4e;" text="Обновить таблицу" textFill="WHITE" />
-            <Label prefHeight="52.0" prefWidth="448.0" text="Таблица пользователей" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font size="29.0" />
-               </font>
-               <padding>
-                  <Insets left="120.0" />
-               </padding>
-            </Label>
+            <Button mnemonicParsing="false" onAction="#statButtonClicked" prefHeight="25.0" prefWidth="165.0" style="-fx-background-color: #5bc0de;" text="Статистика пользователей" textAlignment="CENTER" textFill="WHITE" />
          </items></ToolBar>
       <ImageView fitHeight="50.0" fitWidth="63.0" layoutX="630.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" />
       <ToolBar layoutX="836.0" prefHeight="69.0" prefWidth="63.0" style="-fx-background-color: #4545e0;">

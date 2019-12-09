@@ -3,7 +3,6 @@ package controllers;
 import AlertWindow.AlertWindow;
 import Main.Main;
 import animation.Shake;
-import classes.Material;
 import classes.Result;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -255,28 +254,7 @@ public class ResultWindowController {
         resultTable.setItems(oblist);
 
 
-//        graphicPane.getChildren().clear();
-//
-//        graphicPane.getChildren().add(lineChart);
-//        LineChart<Double,Integer> lineChart = null;
-//        XYChart.Series<Double,Integer> graphic = new XYChart.Series<Double, Integer>();
-//        for(int i=0;i<oblist.size();i++)
-//        {
-//            Double cost = Double.valueOf(costColumn.getText());
-//        graphic.getData().add(new XYChart.Data<Double, Integer>(cost,i));
-//        }
-//
-//        lineChart.getData().addAll();
 
-//        diagrammPane.getChildren().clear();
-//        oblist.add(new PieChart.Data("Затраты на энергию",result.getFinalEnergyCost()));
-//        oblist.add(new PieChart.Data("Затраты на газ",result.getFinalGasCost()));
-//        oblist.add(new PieChart.Data("Затраты на зарплаты",result.getFinalWageCost()));
-//        oblist.add(new PieChart.Data("Затраты на материалы",result.getFinalMaterialCost()));
-//        oblist.add(new PieChart.Data("Затраты на аренду",result.getFinalRentCost()));
-//        PieChart diagramChart = new PieChart(oblist);
-//        diagramChart.setTitle("Диаграмма долей затрат");
-//        diagrammPane.getChildren().add(diagramChart);
     }
 
     public void refresh()

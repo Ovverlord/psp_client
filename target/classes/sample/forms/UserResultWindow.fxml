@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="900.0" style="-fx-background-color: #fcfcf7;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.UserResultWindowController">
+   <children>
+      <TableView fx:id="resultTable" layoutY="69.0" prefHeight="276.0" prefWidth="900.0">
+         <columns>
+            <TableColumn fx:id="energyColumn" prefWidth="128.5" text="Затраты на энергию" />
+            <TableColumn fx:id="gasColumn" prefWidth="97.5999755859375" text="Затраты на газ" />
+            <TableColumn fx:id="rentColumn" prefWidth="117.99998474121094" text="Затраты на аренду" />
+            <TableColumn fx:id="materialColumn" prefWidth="147.20001220703125" text="Затраты на материалы " />
+            <TableColumn fx:id="wageColumn" prefWidth="131.20004272460938" text="Затраты на зарплату" />
+            <TableColumn fx:id="costColumn" prefWidth="147.5999755859375" text="Себестоимость выпуска" />
+            <TableColumn fx:id="userColumn" prefWidth="132.800048828125" text="Логин пользователя" />
+         </columns>
+      </TableView>
+      <Pane layoutX="198.0" layoutY="426.0" prefHeight="104.0" prefWidth="336.0" style="-fx-border-color: #292b2c;">
+         <children>
+            <Button layoutX="12.0" layoutY="7.0" mnemonicParsing="false" onAction="#searchButtonClicked" prefHeight="25.0" prefWidth="98.0" style="-fx-background-color: #292b2c;" text="Поиск" textFill="WHITE" />
+            <Button layoutX="198.0" layoutY="7.0" mnemonicParsing="false" onAction="#resetSearchButtonClicked" prefHeight="25.0" prefWidth="98.0" style="-fx-background-color: #292b2c;" text="Сброс поиска" textFill="WHITE" />
+            <RadioButton fx:id="costRadio" layoutX="14.0" layoutY="72.0" mnemonicParsing="false" text="Себестоимость выпуска">
+               <toggleGroup>
+                  <ToggleGroup fx:id="radioGroup" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="wageCostRadio" layoutX="180.0" layoutY="43.0" mnemonicParsing="false" text="Затраты на зарплату" toggleGroup="$radioGroup" />
+            <RadioButton fx:id="loginRadio" layoutX="14.0" layoutY="41.0" mnemonicParsing="false" text="Логин" toggleGroup="$radioGroup" />
+            <RadioButton fx:id="materialCostRadio" layoutX="180.0" layoutY="72.0" mnemonicParsing="false" text="Затраты на материалы" toggleGroup="$radioGroup" />
+         </children>
+      </Pane>
+      <TextField fx:id="costField" layoutX="21.0" layoutY="426.0" promptText="Себестоимость выпуска" />
+      <TextField fx:id="wageCostField" layoutX="21.0" layoutY="465.0" promptText="Затраты на зарплату" />
+      <TextField fx:id="materialCostField" layoutX="21.0" layoutY="503.0" promptText="Затраты на материалы" />
+      <ToolBar prefHeight="69.0" prefWidth="833.0" style="-fx-background-color: #4545e0;">
+         <items>
+            <Button mnemonicParsing="false" onAction="#refreshTableButtonClicked" prefHeight="25.0" prefWidth="136.0" style="-fx-background-color: #f0ad4e;" text="Обновить таблицу" textFill="WHITE" />
+            <Button mnemonicParsing="false" onAction="#userButtonClicked" prefHeight="25.0" prefWidth="165.0" style="-fx-background-color: #5bc0de;" text="Список пользователей" textAlignment="CENTER" textFill="WHITE" />
+         </items>
+      </ToolBar>
+      <ToolBar layoutX="833.0" prefHeight="69.0" prefWidth="68.0" style="-fx-background-color: #4545e0;">
+         <items>
+            <Button mnemonicParsing="false" onAction="#exitButtonClicked" style="-fx-background-color: #d9534f;" text="Выход" textAlignment="CENTER" textFill="WHITE" />
+         </items>
+      </ToolBar>
+      <TextField fx:id="loginField" layoutX="21.0" layoutY="389.0" promptText="Логин" />
+   </children>
+</AnchorPane>
